@@ -8,13 +8,13 @@ DFA minimization utility for linux. Utility minimizes a DFA given in a txt file 
 
 ## Input file format
 ```
-name_of_the_start_state //a string without whitespaces
-number_of_accept_states //non-negative integer less than 65,536
+name of the start state             //a string without whitespaces
+number of accept states             //non-negative integer less than 65,536
 names of accept states separated by whitespace
-number_of_edges_between_states // non-negative 32-bit integer
-edge1 // edges are given by 3 strings:
-....  // name_of_"from"_state 2. name_of_"to"_state 3. symbol_of_alphabet
-edge2 
+number of edges between states      // non-negative 32-bit integer
+edge_1                              // edges are given by 3 strings without whitespaces:
+....                                // 1. name of "from" state  2. name of "to" state 
+edge_N                              // 3.symbol of alphabet
 ```
 Example:
 ```
