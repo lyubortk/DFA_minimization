@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
     
     if (!(argc == 3 || (argc == 4 && std::string(argv[3]) == "d"))) {
         std::cerr << "Wrong parameters.\n" 
-                  << "Usage: dfa_minimizer input_file output_file\n";
+                  << "Usage: dfa_minimizer input_file output_file [d]\n";
         return 0;
     }
 
