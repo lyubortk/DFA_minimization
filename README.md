@@ -16,6 +16,9 @@ edge_1                              // edges are given by 3 strings without whit
 ....                                // 1. name of "from" state  2. name of "to" state 
 edge_N                              // 3. symbol of alphabet
 ```
+    
+**Number of edges has to be equal to (number of different state names) * (number of elements in the alphabet).**
+
 Example:
 ```
 S
