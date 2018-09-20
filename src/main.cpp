@@ -4,7 +4,7 @@
 #include <cstdint>
 #include "dfa.h"
 
-using std::uint32_t;
+using std::uint16_t;
 
 int main(int argc, char* argv[]) {
     //TODO parameters parsing
@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
     input >> start_state_name;
     dfa.add_state(start_state_name, false, true);
 
-    uint32_t number_of_accept_state;
+    uint16_t number_of_accept_state;
     input >> number_of_accept_state;
 
     while (number_of_accept_state--) {
@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
         dfa.add_state(state_name, true, false);
     }
 
-    uint32_t number_of_edges;
+    uint16_t number_of_edges;
     input >> number_of_edges;
 
     while (number_of_edges--) {
