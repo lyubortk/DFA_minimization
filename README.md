@@ -14,7 +14,7 @@ names of accept states separated by whitespace
 number of edges between states      // non-negative 32-bit integer
 edge_1                              // edges are given by 3 strings without whitespaces:
 ....                                // 1. name of "from" state  2. name of "to" state 
-edge_N                              // 3.symbol of alphabet
+edge_N                              // 3. symbol of alphabet
 ```
 Example:
 ```
