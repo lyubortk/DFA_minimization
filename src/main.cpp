@@ -2,17 +2,17 @@
 #include <iostream>
 #include <string>
 #include <cstdint>
-
 #include "dfa.h"
 
 using std::uint32_t;
 
 int main(int argc, char* argv[]) {
     //TODO parameters parsing
-     
+    
     if (argc != 3) {
         std::cerr << "Wrong parameters.\n" 
                   << "Usage: dfa_minimizer input_file output_file\n";
+        return 0;
     }
 
     std::ifstream input(argv[1]);
