@@ -11,8 +11,8 @@ int main(int argc, char* argv[]) {
     //TODO parameters parsing
      
     if (argc != 3) {
-        std::cerr << "Wrong parameters." 
-                  << " Usage \"dfa_minimization input_file output_file\"";
+        std::cerr << "Wrong parameters.\n" 
+                  << "Usage: dfa_minimizer input_file output_file\n";
     }
 
     std::ifstream input(argv[1]);
