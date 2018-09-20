@@ -2,8 +2,7 @@
 #include <string>
 #include <algorithm>
 #include <set>
-#include <iostream>
-
+#include <iostream> 
 #include "dfa.h"
 
 using std::uint32_t;
@@ -139,8 +138,7 @@ void DFA::dfs_on_pairs(uint32_t v1, uint32_t v2,
     }
 }
 
-void DFA::unite_states() {
-    
+void DFA::build_disting_matrix(std::vector<std::vector<char>>& disting) {
     for (uint32_t i = 0; i < number_of_states; ++i) {
         std::sort(graph[i].begin(), graph[i].end());
     }
@@ -157,9 +155,11 @@ void DFA::unite_states() {
             while (graph[i].size() > pointer_1 && 
                    graph[j].size() > pointer_2) {
                 
-                if (graph[i][pointer_1].symbol < graph[j][pointer_2].symbol) {
+                if (graph[i][pointer_1].symbol < 
+                    graph[j][pointer_2].symbol) {
                     pointer_1++;
-                } else if (graph[j][pointer_2].symbol < graph[i][pointer_1].symbol) {
+                } else if (graph[j][pointer_2].symbol < 
+                           graph[i][pointer_1].symbol) {
                     pointer_2++;
                 } else {
                     uint32_t dest_1 = graph[i][pointer_1].destination;
@@ -172,38 +172,28 @@ void DFA::unite_states() {
                     if (dest_1 != dest_2) {
                         reversed_graph_on_pairs[dest_1][dest_2].push_back(
                                                                 {i, j, symbol});
-                        //
-                        //std::cout << dest_1 << ' ' << dest_2 << ' ' << i << ' ' << j << ' ' << symbol << '\n';
                     }
                     pointer_1++;
                     pointer_2++;
                 }
             } // while sizes > pointers
 
-        } //inner for loop
+        }
     } 
 
-    std::vector<std::vector<char>> distinguishable (number_of_states,
-                                     std::vector<char>(number_of_states, 0));
-    
     for (uint32_t i = 0; i < number_of_states; ++i) {
         for (uint32_t j = i+1; j < number_of_states; ++j) {
             if (is_accept_state[i] != is_accept_state[j]) {
-                dfs_on_pairs(i, j, distinguishable, reversed_graph_on_pairs);
+                dfs_on_pairs(i, j, disting, reversed_graph_on_pairs);
             }
         }
-    } 
-    
-   /* */
-    for (int i = 0; i < (int)number_of_states; ++i) {
-        for (int j = 0; j < (int)number_of_states; ++j) {
-            std::cout << (bool)distinguishable[i][j] << ' ';
-        }
-        std::cout << '\n';
     }
-  /* */
+}
 
-
+void DFA::unite_states() {
+    std::vector<std::vector<char>> distinguishable(number_of_states,
+                                std::vector<char> (number_of_states));
+    build_disting_matrix(distinguishable);
     DFA dfa_replacement;
       
     std::vector<uint32_t> head_element(number_of_states, UINT32_MAX);
@@ -214,7 +204,7 @@ void DFA::unite_states() {
         for (uint32_t j = i + 1; j < number_of_states; ++j) {
             if (!distinguishable[i][j]) {
                 head_element[j] = i;
-                new_state_name.append("," + int_to_state_name[j]);
+                new_state_name.append(int_to_state_name[j]);
             }
         }
         int_to_state_name[i] = new_state_name;
@@ -242,5 +232,4 @@ void DFA::unite_states() {
     }
 
     *this = dfa_replacement;
-
 }

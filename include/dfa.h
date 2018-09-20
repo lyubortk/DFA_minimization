@@ -48,5 +48,6 @@ private:
     void dfs_on_pairs(uint32_t v1, uint32_t v2, 
                       std::vector<std::vector<char>>& used, 
                       std::vector<std::vector<std::vector<PairEdge>>>& gr);
+    void build_disting_matrix(std::vector<std::vector<char>>& disting);
     void unite_states();
 };
