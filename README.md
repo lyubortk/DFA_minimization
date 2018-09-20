@@ -31,25 +31,26 @@ A S b
 ```
 
 
-## Building and usage
+## Building
 
-1. Building an executable ("dfa_minimizer"):
+Building an executable ("dfa_minimizer"):
 ```
 make
 ```
 
-2. Minimizing and transforming a DFA to DOT language:
+## Minimizing a DFA and transforming it to DOT language
+1. Minimizing and transforming a DFA to DOT language:
 ```
 dfa_minimizer input_file output_file
 ```
 
-3. Transforming a DFA to DOT language without minimizing:
+2. Transforming a DFA to DOT language without minimizing:
 ```
 dfa_minimizer input_file output_file d
 ```
 
 ## Minimizing a DFA and visualizing it (requires Grapviz)
-An executable of the minization utility should be already built.
+An executable of the minization utility ("dfa_minimizer") should be already built.
 
 1. Minimizing and visualizing a DFA:
 ``` 
