@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -O3 -Wall -Wextra -Wshadow -pedantic -Werror -std=c++17 -I$(INCLUDE_DIR)
+CXXFLAGS = -O0 -g -Wall -Wextra -Wshadow -pedantic -Werror -std=c++17 -I$(INCLUDE_DIR)
 
 INCLUDE_DIR = include
 SOURCE_DIR = src
