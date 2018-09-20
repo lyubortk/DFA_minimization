@@ -1,6 +1,7 @@
 a
 3
 d c e
+12
 a b 0
 a c 1
 b a 0

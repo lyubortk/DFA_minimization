@@ -1,0 +1,28 @@
+S
+1
+S
+20
+S A a
+S B b
+S C c
+S D d
+
+A S a
+A S b
+A S c
+A S d
+
+B S a
+B S b
+B S c
+B S d
+
+C S a
+C S b
+C S c
+C S d
+
+D S a
+D S b
+D S c
+D S d

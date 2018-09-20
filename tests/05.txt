@@ -1,0 +1,22 @@
+START
+1
+END
+18
+START a1 1
+START a2 2
+a1 b1 1
+a1 b1 2
+a2 b2 1
+a2 b2 2
+b1 c1 1
+b1 c1 2
+b2 c2 1
+b2 c2 2
+c1 d1 1
+c1 d1 2
+c2 d2 1
+c2 d2 2
+d1 END 1
+d1 END 2
+d2 END 1
+d2 END 2
