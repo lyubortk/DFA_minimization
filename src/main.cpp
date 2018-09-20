@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
         dfa.add_state(state_name, true, false);
     }
 
-    uint16_t number_of_edges;
+    std::uint32_t number_of_edges;
     input >> number_of_edges;
 
     while (number_of_edges--) {
