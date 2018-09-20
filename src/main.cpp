@@ -9,7 +9,7 @@ using std::uint32_t;
 int main(int argc, char* argv[]) {
     //TODO parameters parsing
     
-    if (argc != 3) {
+    if (!(argc == 3 || (argc == 4 && std::string(argv[3]) == "d"))) {
         std::cerr << "Wrong parameters.\n" 
                   << "Usage: dfa_minimizer input_file output_file\n";
         return 0;
@@ -42,7 +42,10 @@ int main(int argc, char* argv[]) {
         dfa.add_edge(from, to, symbol);
     }
     
-    dfa.minimize();
+    if (!(argc == 4 && std::string(argv[3]) == "d")) {
+        dfa.minimize();
+    }
+
     dfa.draw_in_DOT(output);
 
     return 0;
