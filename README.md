@@ -57,7 +57,7 @@ An executable of the minization utility ("dfa_minimizer") should be already buil
 visualizer.sh input_file output_file.png
 ```
 
-2. Visualizing a DFA without visualization:
+2. Visualizing a DFA without minimizing it:
 ```
 visualizer.sh input_file output_file.png d
 ```
