@@ -49,7 +49,7 @@ dfa_minimizer input_file output_file
 dfa_minimizer input_file output_file d
 ```
 
-## Minimizing a DFA and visualizing it (requires Grapviz)
+## Minimizing a DFA and visualizing it (requires Graphviz)
 An executable of the minization utility ("dfa_minimizer") should be already built.
 
 1. Minimizing and visualizing a DFA:
