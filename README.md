@@ -17,7 +17,7 @@ edge_1                                  // edges are given by 3 strings without 
 edge_N                                  // 3. symbol of alphabet
 ```
     
-**Number of edges has to be equal to (number of different state names) * (number of elements in the alphabet).**
+**The number of edges has to be equal to (number of different state names) * (number of elements in the alphabet).**
 
 Example:
 ```
@@ -45,9 +45,9 @@ make
 ```
 dfa_minimizer [OPTIONS] input_file
 ```
-OPTIONS:
--n              output a graph without minimizitng the DFA
--o <file_name>  spceify output file name (default one is <input_file>.out)
+OPTIONS:  
+-n &emsp; &emsp; &ensp; voutput the graph without minimizitng the DFA  
+-o <file_name> &nbsp;spceify output file name (default one is <input_file>.out)
 
 ## Minimizing a DFA and visualizing it (requires Graphviz)
 An executable of the minization utility ("dfa_minimizer") should be already built.
@@ -55,6 +55,6 @@ An executable of the minization utility ("dfa_minimizer") should be already buil
 ``` 
 visualizer.sh [OPTIONS] input_file
 ```
-OPTIONS:
--n              visualize the graph without minimizitng the DFA
--o <file_name>  spceify output file name (default one is <input_file>.png)
+OPTIONS:  
+-n &emsp; &emsp; &ensp; visualize the graph without minimizitng the DFA  
+-o <file_name> &nbsp;spceify output file name (default one is <input_file>.png)
