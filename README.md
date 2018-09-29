@@ -8,13 +8,13 @@ DFA minimization utility for linux. Utility minimizes a DFA given in a txt file 
 
 ## Input file format
 ```
-name of the start state                 //a string without whitespaces
-number of accept states                 //non-negative integer less than 65,536
-names of accept states separated by whitespace
-number of edges between states          // non-negative 32-bit integer
-edge_1                                  // edges are given by 3 strings without whitespaces:
-....                                    // 1. name of "from" state  2. name of "to" state 
-edge_N                                  // 3. symbol of alphabet
+name of the start state             // a string without whitespaces
+number of accept states             // non-negative integer less than 65,536
+names of accept states              // strings separated by whitespace
+number of edges between states      // non-negative 32-bit integer
+edge_1                              // edges are given by 3 strings without whitespaces:
+....                                // 1. name of "from" state  2. name of "to" state 
+edge_N                              // 3. symbol of alphabet
 ```
     
 **The number of edges has to be equal to (number of different state names) * (number of elements in the alphabet).**
@@ -46,8 +46,10 @@ make
 dfa_minimizer [OPTIONS] input_file
 ```
 OPTIONS:  
--n &emsp; &emsp; &ensp; voutput the graph without minimizitng the DFA  
--o <file_name> &nbsp;spceify output file name (default one is <input_file>.out)
+```
+-n              output the graph without minimizing the DFA  
+-o <file_name>  specify output file name (default one is <input_file>.out)
+```
 
 ## Minimizing a DFA and visualizing it (requires Graphviz)
 An executable of the minization utility ("dfa_minimizer") should be already built.
@@ -55,6 +57,8 @@ An executable of the minization utility ("dfa_minimizer") should be already buil
 ``` 
 visualizer.sh [OPTIONS] input_file
 ```
-OPTIONS:  
--n &emsp; &emsp; &ensp; visualize the graph without minimizitng the DFA  
--o <file_name> &nbsp;spceify output file name (default one is <input_file>.png)
+OPTIONS:
+```
+-n              visualize the graph without minimizing the DFA  
+-o <file_name>  specify output file name (default one is <input_file>.png)
+```
